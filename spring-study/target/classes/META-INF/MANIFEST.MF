@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Built-By: soyou
+Build-Jdk: 17.0.4.1
+Implementation-Title: Spring Boot Blank Project (from https://github.com
+ /making/spring-boot-blank)
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: jp.co.jeus
+Implementation-Vendor: Pivotal Software, Inc.
+Main-Class: jp.co.jeus.spring_study.App
+Created-By: Maven Integration for Eclipse
+
