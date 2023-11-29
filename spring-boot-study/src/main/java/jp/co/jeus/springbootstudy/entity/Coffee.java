@@ -1,14 +1,21 @@
-package jp.co.jeus.springbootstudy.dto;
+package jp.co.jeus.springbootstudy.entity;
 
 import java.util.UUID;
 
-import lombok.Data;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
-@Data
+
+@Entity
 public class Coffee {
 	
-	private final String id;
+	@Id
+	private String id;
 	private String name;
+	
+	public Coffee() {
+		
+	}
 	
 	public Coffee(String id, String name) {
 		this.id = id;
@@ -17,6 +24,10 @@ public class Coffee {
 	
 	public Coffee(String name) {
 		this(UUID.randomUUID().toString(), name);
+	}
+	
+	public void setId(String id) {
+		this.id = id;
 	}
 	
 	public String getId() {
