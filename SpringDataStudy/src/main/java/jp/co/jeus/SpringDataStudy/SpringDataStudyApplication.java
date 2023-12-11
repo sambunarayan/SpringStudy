@@ -9,17 +9,17 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
-import jp.co.jeus.SpringDataStudy.entity.AirCraft;
+import jp.co.jeus.SpringDataStudy.entity.Aircraft;
 
 @SpringBootApplication
 public class SpringDataStudyApplication {
 
 	@Bean
-	public RedisOperations<String, AirCraft> redisOperations(RedisConnectionFactory factory) {
-		Jackson2JsonRedisSerializer<AirCraft> serializer = 
-				new Jackson2JsonRedisSerializer<>(AirCraft.class);
+	public RedisOperations<String, Aircraft> redisOperations(RedisConnectionFactory factory) {
+		Jackson2JsonRedisSerializer<Aircraft> serializer = 
+				new Jackson2JsonRedisSerializer<>(Aircraft.class);
 		
-		RedisTemplate<String, AirCraft> template = new RedisTemplate();
+		RedisTemplate<String, Aircraft> template = new RedisTemplate();
 		template.setConnectionFactory(factory);
 		template.setDefaultSerializer(serializer);
 		template.setKeySerializer(new StringRedisSerializer());
