@@ -1,4 +1,6 @@
-package jp.co.jeus.SpringDataStudy.entity;
+package jp.co.jeus.aircraft.entity;
+
+import java.time.Instant;
 
 import org.springframework.data.annotation.Id;
 

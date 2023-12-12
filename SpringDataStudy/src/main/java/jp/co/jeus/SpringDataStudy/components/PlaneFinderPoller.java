@@ -2,6 +2,7 @@ package jp.co.jeus.SpringDataStudy.components;
 
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisOperations;
+import org.springframework.http.MediaType;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -13,7 +14,7 @@ import jp.co.jeus.SpringDataStudy.entity.Aircraft;
 @Component
 public class PlaneFinderPoller {
 
-	private WebClient client = WebClient.create("http://localhost:6379/");
+	private WebClient client = WebClient.create("http://localhost:7634/aircraft");
 	private final RedisConnectionFactory connectionFactory;
 	private final RedisOperations<String, Aircraft> redisOperations;
 
