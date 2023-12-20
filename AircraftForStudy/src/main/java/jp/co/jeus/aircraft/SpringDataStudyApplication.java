@@ -17,7 +17,7 @@ public class SpringDataStudyApplication {
 	@GetMapping("aircraft")
 	public List<Aircraft> get() {
 		Aircraft a = new Aircraft();
-		a.setId(1L);
+		a.setId((long) (Math.random() * 10000));
 		a.setReg("reg");
 		return List.of(a);
 	}
