@@ -1,6 +1,7 @@
 package jp.co.jeus.aircraft;
 
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.boot.SpringApplication;
@@ -19,6 +20,10 @@ public class SpringDataStudyApplication {
 		Aircraft a = new Aircraft();
 		a.setId((long) (Math.random() * 10000));
 		a.setReg("reg");
+		a.setType("type");
+		a.setPosUpdateTime(LocalDateTime.now().toString());
+		a.setSquawk("Squawk");
+		a.setCallsign("category11");
 		return List.of(a);
 	}
 	
