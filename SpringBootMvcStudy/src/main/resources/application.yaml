@@ -1,0 +1,27 @@
+server:
+  port: 80
+spring:
+  # H2 Database configuration
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: 'jdbc:h2:mem:test'   # H2 DB connection address (In-Memory Mode)
+    #url: 'jdbc:h2:~/test'    # H2 DB connection address (Embedded Mode)
+    username: username        # H2 DB connection ID
+    password: password        # H2 DB connection PW
+
+  # H2 Console configuration
+  h2:
+    console: # Ability to manage H2 DB on the web
+      enabled: true           # H2 Console whether or not to use
+      path: /h2-console       # H2 Console connection address
+
+  # JPA configuration
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create        # DB initialize (none, create, create-drop, update, validate)
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: true      # query log format (sort)
+        show_sql: true        # query log output
