@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -40,5 +41,5 @@ public class Aircraft {
 	private String posUpdateTime;
 	@JsonProperty("bds40_seen_time")
 	private String bds40SeenTime;
-	
+
 }

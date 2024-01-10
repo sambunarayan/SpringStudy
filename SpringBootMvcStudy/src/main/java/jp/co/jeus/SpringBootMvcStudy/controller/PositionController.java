@@ -25,7 +25,7 @@ public class PositionController {
 		client.get()
 			.retrieve()
 			.bodyToFlux(Aircraft.class)
-			.filter(plane -> plane.getReg().isEmpty())
+			.filter(plane -> !plane.getReg().isEmpty())
 			.toStream()
 			.forEach(repository::save);
 		model.addAttribute("currentPositions", repository.findAll());
