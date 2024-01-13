@@ -18,6 +18,7 @@ public class SpringKafkaApplication {
 	@GetMapping("kafka/get")
 	public void get() {
 		kafka.helloKafka();
+		System.out.println("OK");
 	}
 
 
