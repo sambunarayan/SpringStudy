@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var socket = new WebSocket('ws://' + window.location.host + '/ws');
+	
+	socket.onopen = function () {
+		console.log('WebSocket connection is open for business');
+		socket.send("test conn");
+	};
+	
+	socket.send("test conn");
+	
+	socket.onmessage = function (message) {
+		var text = "";
+		var arrAc = message.data.split("Aircraft");
+		var ac = "";
+		console.log("send message:" + message);
+		for (i = 1; i < arrAc.length; i++) {
+			ac = (arrAc[i].endWith(", ")) ? arrAc[i].substring(0, arrAc[i].length - 2) : arrAc[i];
+			text += "Aircraft" + ac + "\n\n";
+		}
+		document.getElementById("positions").innerText = text;
+	};
+	
+	socket.onclose = function () {
+		console.log('WebSocket connection closed.');
+	};
+	
+	function sendText() {
+		var msg = {
+		    type: "message",
+		    text: "message from send text",
+		    date: Date.now(),
+		  };
+	
+	  // Send the msg object as a JSON-formatted string.
+	  socket.send(JSON.stringify(msg));
+	}
+</script>
+</head>
+<body>
+	
+	<h1>Current Aircraft Positions</h1>
+	<label id ="positions"></label>
+
+</body>
+</html>
