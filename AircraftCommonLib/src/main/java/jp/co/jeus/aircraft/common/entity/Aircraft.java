@@ -1,4 +1,4 @@
-package jp.co.jeus.SpringBootReactive.entity;
+package jp.co.jeus.aircraft.common.entity;
 
 import java.time.Instant;
 
@@ -39,11 +39,11 @@ public class Aircraft {
     private boolean isOnGround;
 
     @JsonProperty("last_seen_time")
-    private String lastSeenTime;
+    private Instant lastSeenTime;
     @JsonProperty("pos_update_time")
-    private String posUpdateTime;
+    private Instant posUpdateTime;
     @JsonProperty("bds40_seen_time")
-    private String bds40SeenTime;
+    private Instant bds40SeenTime;
 
     public Aircraft(String callsign, String reg, String flightno, String type,
                     int altitude, int heading, int speed,
@@ -53,18 +53,18 @@ public class Aircraft {
                 altitude, heading, speed, 0, 0,
                 lat, lon, 0D, 0D, 0D,
                 false, true,
-                "", "", "");
+                Instant.now(), Instant.now(), Instant.now());
     }
 
-//    public void setLastSeenTime(long lastSeenTime) {
-//        this.lastSeenTime = Instant.ofEpochSecond(lastSeenTime);
-//    }
-//
-//    public void setPosUpdateTime(long posUpdateTime) {
-//        this.posUpdateTime = Instant.ofEpochSecond(posUpdateTime);
-//    }
-//
-//    public void setBds40SeenTime(long bds40SeenTime) {
-//        this.bds40SeenTime = Instant.ofEpochSecond(bds40SeenTime);
-//    }
+    public void setLastSeenTime(long lastSeenTime) {
+        this.lastSeenTime = Instant.ofEpochSecond(lastSeenTime);
+    }
+
+    public void setPosUpdateTime(long posUpdateTime) {
+        this.posUpdateTime = Instant.ofEpochSecond(posUpdateTime);
+    }
+
+    public void setBds40SeenTime(long bds40SeenTime) {
+        this.bds40SeenTime = Instant.ofEpochSecond(bds40SeenTime);
+    }
 }
