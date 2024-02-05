@@ -14,7 +14,7 @@ import reactor.util.retry.Retry;
 public class RequestConfig {
 	
 	@Bean
-	public RSocketRequester getRsocketRequester(RSocketStrategies rSocketStrategies) {
+	public RSocketRequester rSocketRequester(RSocketStrategies rSocketStrategies) {
 		return RSocketRequester.builder()
 				.rsocketConnector(connector -> connector.reconnect(Retry.backoff(10, Duration.ofMillis(500))))
 				.rsocketStrategies(rSocketStrategies)

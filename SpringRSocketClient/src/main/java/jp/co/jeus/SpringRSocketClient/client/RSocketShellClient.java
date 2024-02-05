@@ -18,7 +18,7 @@ public class RSocketShellClient {
 	}
 	
 	@ShellMethod("Send one request. One response will be printed.")
-	public void requestResponse() {
+	public void req() {
 		log.info("Sending one request. Waiting for one response...");
 		
 		this.rocketRequester.route("request-response")
@@ -26,5 +26,10 @@ public class RSocketShellClient {
 			.retrieveMono(Message.class)
 			.log()
 			.block();
+	}
+	
+	@ShellMethod("test shell")
+	public void sum() {
+		log.info("Test shell done.");
 	}
 }
