@@ -1,13 +1,13 @@
-package jp.co.jeus.SpringDataStudy;
+package jp.co.jeus.aircraft;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringDataStudyApplicationTests {
+class SpringDataStudyApplicationTest {
 
 	@Test
-	void contextLoads() {
+	public void test() {
+		
 	}
-
 }
